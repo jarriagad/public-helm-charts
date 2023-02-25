@@ -10,6 +10,34 @@ entries:
       artifacthub.io/license: MIT
     apiVersion: v2
     appVersion: 1.25.2
+    created: "2023-02-25T16:01:10.975178553Z"
+    description: Plex Media Server Helm chart
+    digest: 823800ae6021b138941475048032f89f7d6ff7748928e7e9d67bae7ece3474fa
+    home: https://www.plex.tv
+    icon: https://utkuozdemir.org/helm-charts/plex.png
+    keywords:
+    - plex
+    - media-server
+    - plex-media-server
+    - streaming
+    - tv
+    name: plex
+    sources:
+    - https://github.com/linuxserver/docker-plex
+    - https://github.com/utkuozdemir/helm-charts
+    type: application
+    urls:
+    - https://github.com/jarriagad/public-helm-charts/releases/download/plex-2.1.5/plex-2.1.5.tgz
+    version: 2.1.5
+  - annotations:
+      artifacthub.io/changes: |
+        - Disable NET_ADMIN capability
+      artifacthub.io/images: |
+        - name: linuxserver/plex
+          image: docker.io/linuxserver/plex:1.25.2
+      artifacthub.io/license: MIT
+    apiVersion: v2
+    appVersion: 1.25.2
     created: "2023-02-25T05:03:35.871193911Z"
     description: Plex Media Server Helm chart
     digest: 311977a1145c0c568568bdace9bc3034ad5dd1299a55d0105c74ebdac1cedc7c
@@ -117,4 +145,4 @@ entries:
     urls:
     - https://github.com/jarriagad/public-helm-charts/releases/download/plex-2.1.1/plex-2.1.1.tgz
     version: 2.1.1
-generated: "2023-02-25T05:03:35.871204211Z"
+generated: "2023-02-25T16:01:10.975237455Z"
