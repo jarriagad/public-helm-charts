@@ -140,7 +140,28 @@ persistence:
     customVolume: {}
       # hostPath:
       #   path: /path/on/host
-  data:
+  movies:
+    # -- Data: Enable persistence
+    enabled: false
+    # -- Data: Persistence type is pvc. When `false`, data volume definition is read from `persistence.data.customVolume`
+    isPvc: true
+    # -- Data: Name of the existing claim to be used
+    existingClaim: ""
+    # -- Data: Storage class for the data volume
+    storageClass: ""
+    # -- Data: Annotations for the claim
+    annotations: {}
+    # helm.sh/resource-policy: keep
+    # -- Data: Access modes for the claim
+    accessModes:
+      - ReadWriteOnce
+    # -- Data: Size for the claim
+    size: 64Gi
+    # -- Data: Alternative data volume definition (e.g. nfs, hostPath). Used when `persistence.data.isPvc` is `false`
+    customVolume: {}
+    # hostPath:
+    #   path: /path/on/host
+  tv:
     # -- Data: Enable persistence
     enabled: false
     # -- Data: Persistence type is pvc. When `false`, data volume definition is read from `persistence.data.customVolume`

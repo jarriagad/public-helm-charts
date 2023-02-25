@@ -50,8 +50,10 @@ spec:
           volumeMounts:
             - mountPath: /config
               name: config
-            - mountPath: /data
-              name: data
+            - mountPath: /movies
+              name: movies
+            - mountPath: /tv
+              name: tv
             {{- with .Values.extraVolumeMounts }}
             {{- toYaml . | nindent 12 }}
             {{- end }}
@@ -109,13 +111,26 @@ spec:
         {{- else }}
           emptyDir: {}
         {{- end }}
-        - name: data
-        {{- if .Values.persistence.data.enabled }}
-          {{- if .Values.persistence.data.isPvc }}
+        - name: movies
+        {{- if .Values.persistence.movies.enabled }}
+          {{- if .Values.persistence.movies.isPvc }}
           persistentVolumeClaim:
-            claimName: {{ .Values.persistence.data.existingClaim | default (include "plex.dataPvcName" .) }}
+            claimName: {{ .Values.persistence.movies.existingClaim | default (include "plex.moviesPvcName" .) }}
           {{- else }}
-          {{- with .Values.persistence.data.customVolume }}
+          {{- with .Values.persistence.movies.customVolume }}
+          {{- toYaml . | nindent 10 }}
+          {{- end }}
+          {{- end }}
+        {{- else }}
+          emptyDir: {}
+        {{- end }}
+        - name: tv
+        {{- if .Values.persistence.tv.enabled }}
+          {{- if .Values.persistence.tv.isPvc }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.tv.existingClaim | default (include "plex.tvPvcName" .) }}
+          {{- else }}
+          {{- with .Values.persistence.tv.customVolume }}
           {{- toYaml . | nindent 10 }}
           {{- end }}
           {{- end }}
