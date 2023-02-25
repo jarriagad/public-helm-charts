@@ -69,8 +69,15 @@ Create the name of the config pvc
 {{- end }}
 
 {{/*
-Create the name of the data pvc
+Create the name of the movies pvc
 */}}
-{{- define "plex.dataPvcName" -}}
-{{- printf "%s-%s" (include "plex.fullname" .) "data" }}
+{{- define "plex.moviesPvcName" -}}
+{{- printf "%s-%s" (include "plex.fullname" .) "movies" }}
+{{- end }}
+
+{{/*
+Create the name of the tv pvc
+*/}}
+{{- define "plex.tvPvcName" -}}
+{{- printf "%s-%s" (include "plex.fullname" .) "tv" }}
 {{- end }}
