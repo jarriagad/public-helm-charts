@@ -1,0 +1,36 @@
+apiVersion: v1
+entries:
+  plex:
+  - annotations:
+      artifacthub.io/changes: |
+        - Disable NET_ADMIN capability
+      artifacthub.io/images: |
+        - name: linuxserver/plex
+          image: docker.io/linuxserver/plex:1.25.2
+      artifacthub.io/license: MIT
+    apiVersion: v2
+    appVersion: 1.25.2
+    created: "2023-02-25T04:30:17.301629508Z"
+    description: Plex Media Server Helm chart
+    digest: 9382da4c68f747bf112103393b45991ded7197d8f13c37eae2c80576f5c3e073
+    home: https://www.plex.tv
+    icon: https://utkuozdemir.org/helm-charts/plex.png
+    keywords:
+    - plex
+    - media-server
+    - plex-media-server
+    - streaming
+    - tv
+    maintainers:
+    - email: uoz@protonmail.com
+      name: Utku Özdemir
+      url: https://utkuozdemir.org
+    name: plex
+    sources:
+    - https://github.com/linuxserver/docker-plex
+    - https://github.com/utkuozdemir/helm-charts
+    type: application
+    urls:
+    - https://github.com/jarriagad/public-helm-charts/releases/download/plex-2.1.1/plex-2.1.1.tgz
+    version: 2.1.1
+generated: "2023-02-25T04:30:17.301637809Z"
