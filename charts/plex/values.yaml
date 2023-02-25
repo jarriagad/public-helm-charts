@@ -88,6 +88,8 @@ service:
   type: ClusterIP
   # -- Port for the service to use
   port: 32400
+  # -- Annotations for the service
+  annotations: {}
 
 ingress:
   # -- Expose the app using an ingress
