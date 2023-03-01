@@ -2,7 +2,7 @@ apiVersion: v2
 name: plex
 description: Plex Media Server Helm chart
 type: application
-version: 2.1.6
+version: 2.1.7
 appVersion: 1.25.2
 home: https://www.plex.tv
 keywords:

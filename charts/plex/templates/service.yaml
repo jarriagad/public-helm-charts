@@ -22,7 +22,6 @@ spec:
   selector:
     {{- include "plex.selectorLabels" . | nindent 4 }}
 {{- else if eq .Values.service.type "LoadBalancer" }}
-spec:
   selector:
     {{- include "plex.selectorLabels" . | nindent 4 }}
   ports:
