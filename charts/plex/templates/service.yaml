@@ -9,6 +9,7 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
+{{- if eq .Values.service.type "ClusterIP" }}
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
@@ -20,3 +21,19 @@ spec:
     {{- end }}
   selector:
     {{- include "plex.selectorLabels" . | nindent 4 }}
+{{- else if eq .Values.service.type "LoadBalancer" }}
+spec:
+  selector:
+    {{- include "plex.selectorLabels" . | nindent 4 }}
+  ports:
+    - name: plex
+      port: {{ .Values.service.port }}
+      targetPort: plex
+    {{- with .Values.additionalServicePorts }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  type: LoadBalancer
+  {{- if .Values.service.LoadBalancerIP }}
+  loadBalancerIP: {{ .Values.service.LoadBalancerIP }}
+  {{- end }}
+{{- end }}
