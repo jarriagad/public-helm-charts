@@ -24,6 +24,9 @@ spec:
       labels:
         {{- include "plex.selectorLabels" . | nindent 8 }}
     spec:
+      {{- if .Values.hostname }}
+      hostname: {{ .Values.hostname }}
+      {{- end }}
       hostNetwork: {{ .Values.hostNetwork }}
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:

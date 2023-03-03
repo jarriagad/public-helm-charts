@@ -4,6 +4,9 @@ replicaCount: 1
 # -- Use host network
 hostNetwork: false
 
+#Hostname for plex server
+hostname: ""
+
 hostPort:
   # -- Use host port for the application
   enabled: false
