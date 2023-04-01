@@ -1,0 +1,10 @@
+apiVersion: v2
+name: resume
+description: Current Resume
+type: application
+version: 0.0.1
+appVersion: 0.0.1
+keywords:
+  - resume
+sources:
+  - https://github.com/jarriagad/resume

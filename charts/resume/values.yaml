@@ -1,0 +1,130 @@
+# -- Number of replicas to run. Chart is not designed to scale horizontally, use at your own risk
+replicaCount: 1
+
+# -- Use host network
+hostNetwork: false
+
+#Hostname for resume server
+hostname: ""
+
+hostPort:
+  # -- Use host port for the application
+  enabled: false
+  # -- Host port to bind to
+  port: 32400
+
+# -- Additional port definitions for the pod
+additionalPorts: []
+
+# -- Additional port definitions for the service
+additionalServicePorts: []
+
+image:
+  # -- Image repository
+  repository: ghcr.io/jarriagad/resume
+  # -- Image pull policy
+  pullPolicy: IfNotPresent
+  # -- Image tag (if not specified, defaults to the chart's appVersion)
+  tag: "latest"
+
+# -- Image pull secrets
+imagePullSecrets: []
+# -- String to partially override fullname template with a string (will prepend the release name)
+nameOverride: ""
+# -- String to fully override fullname template with a string
+fullnameOverride: ""
+
+# -- Annotations for the pods
+podAnnotations: {}
+
+# -- Security context for the pods
+podSecurityContext: {}
+
+# -- Security context for the container
+securityContext: {}
+  # capabilities:
+  #   add:
+  #     - NET_ADMIN
+
+# -- Deployment strategy
+strategy:
+  type: Recreate
+
+service:
+  # -- Type of the service
+  type: ClusterIP
+  # -- Port for the service to use
+  port: 8000
+  # -- Annotations for the service
+  annotations: {}
+
+ingress:
+  # -- Expose the app using an ingress
+  enabled: false
+  # -- Ingress class name
+  className: ""
+  # -- Annotations for the ingress
+  annotations: {}
+  # -- Ingress hosts configuration
+  # @default -- see [values.yaml](values.yaml)
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  # -- The TLS configuration for the Ingress
+  tls: []
+
+# -- The resource requests and limits of the container
+resources: {}
+
+# -- The node selector for the deployment
+nodeSelector: {}
+
+# -- Tolerations for the pod assignment
+tolerations: []
+
+# -- Affinity for the pod assignment
+affinity: {}
+
+# -- Non-sensitive environment variables to be set in the pods. See the [application docs](https://docs.linuxserver.io/images/docker-resume)
+env: {}
+
+# -- Sensitive environment variables to be set in the pods. See the [application docs](https://docs.linuxserver.io/images/docker-resume)
+secretEnv: {}
+
+# -- DNS configuration for the pod
+dnsConfig: {}
+
+# -- DNS policy for the pod
+dnsPolicy: ClusterFirst
+
+# -- Arbitrary extra volume definitions for the pod
+extraVolumes: []
+
+# -- Arbitrary extra volume mounts for the pod
+extraVolumeMounts: {}
+
+# -- Pod liveness probe
+livenessProbe: {}
+
+# -- Pod readiness probe
+readinessProbe: {}
+
+# -- Init containers
+initContainers: []
+  # - name: init
+  #   image: busybox:stable-musl
+  #   command:
+  #     - sh
+  #     - -c
+  #     - echo "initializing..."
+
+# -- Sidecar containers
+sidecarContainers: []
+  # - name: sidecar
+  #   image: busybox:stable-musl
+  #   command:
+  #     - tail
+  #     - -f
+  #     - /dev/null
