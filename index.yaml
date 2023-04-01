@@ -229,4 +229,19 @@ entries:
     urls:
     - https://github.com/jarriagad/public-helm-charts/releases/download/plex-2.1.1/plex-2.1.1.tgz
     version: 2.1.1
-generated: "2023-03-03T01:33:10.887891229Z"
+  resume:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-04-01T07:20:29.929049484Z"
+    description: Current Resume
+    digest: 932811c86c259e500c205b908179e57d9975302faade1ef2ed36b9b01bb4b9fb
+    keywords:
+    - resume
+    name: resume
+    sources:
+    - https://github.com/jarriagad/resume
+    type: application
+    urls:
+    - https://github.com/jarriagad/public-helm-charts/releases/download/resume-0.0.1/resume-0.0.1.tgz
+    version: 0.0.1
+generated: "2023-04-01T07:20:29.929072084Z"
