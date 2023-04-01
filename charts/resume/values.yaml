@@ -34,6 +34,10 @@ nameOverride: ""
 # -- String to fully override fullname template with a string
 fullnameOverride: ""
 
+container:
+  cmd: []
+  args: []
+
 # -- Annotations for the pods
 podAnnotations: {}
 
