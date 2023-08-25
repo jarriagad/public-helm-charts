@@ -1,4 +1,4 @@
-# -- Number of replicas to run. Chart is not designed to scale horizontally, use at your own risk
+# -- Number  replicas to run. Chart is not designed to scale horizontally, use at your own risk
 replicaCount: 1
 
 # -- Use host network
@@ -92,7 +92,9 @@ tolerations: []
 affinity: {}
 
 # -- Non-sensitive environment variables to be set in the pods. See the [application docs](https://docs.linuxserver.io/images/docker-resume)
-env: {}
+env:
+  - name: STAGING
+    value: "True"
 
 # -- Sensitive environment variables to be set in the pods. See the [application docs](https://docs.linuxserver.io/images/docker-resume)
 secretEnv: {}
@@ -104,10 +106,14 @@ dnsConfig: {}
 dnsPolicy: ClusterFirst
 
 # -- Arbitrary extra volume definitions for the pod
-extraVolumes: []
+extraVolumes:
+  - name: static-files
+    emptyDir: {}
 
 # -- Arbitrary extra volume mounts for the pod
-extraVolumeMounts: {}
+extraVolumeMounts:
+  - name: static-files
+    mountPath: /app/static
 
 # -- Pod liveness probe
 livenessProbe: {}
