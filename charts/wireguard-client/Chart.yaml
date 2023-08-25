@@ -1,0 +1,11 @@
+apiVersion: v2
+name: wireguard-client
+description: Connect cluster to wireguard server
+type: application
+version: 0.0.1
+appVersion: 1.0.20210914
+keywords:
+  - wireguard
+  - vpn
+sources:
+  - https://github.com/linuxserver/docker-wireguard
