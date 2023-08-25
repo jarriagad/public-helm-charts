@@ -258,4 +258,20 @@ entries:
     urls:
     - https://github.com/jarriagad/public-helm-charts/releases/download/resume-0.0.1/resume-0.0.1.tgz
     version: 0.0.1
-generated: "2023-04-01T16:37:25.858272649Z"
+  wireguard-client:
+  - apiVersion: v2
+    appVersion: 1.0.20210914
+    created: "2023-08-25T21:59:09.375157618Z"
+    description: Connect cluster to wireguard server
+    digest: daa3deb7ef7ab3c864406c710342a2b6eeb93c4d4993bd76e2838b9c561b4438
+    keywords:
+    - wireguard
+    - vpn
+    name: wireguard-client
+    sources:
+    - https://github.com/linuxserver/docker-wireguard
+    type: application
+    urls:
+    - https://github.com/jarriagad/public-helm-charts/releases/download/wireguard-client-0.0.1/wireguard-client-0.0.1.tgz
+    version: 0.0.1
+generated: "2023-08-25T21:59:09.375179818Z"
