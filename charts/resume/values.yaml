@@ -104,14 +104,10 @@ dnsConfig: {}
 dnsPolicy: ClusterFirst
 
 # -- Arbitrary extra volume definitions for the pod
-extraVolumes:
-  - name: static-files
-    emptyDir: {}
+extraVolumes: []
 
 # -- Arbitrary extra volume mounts for the pod
-extraVolumeMounts:
-  - name: static-files
-    mountPath: /app/static
+extraVolumeMounts: []
 
 # -- Pod liveness probe
 livenessProbe: {}
@@ -136,3 +132,6 @@ sidecarContainers: []
   #     - tail
   #     - -f
   #     - /dev/null
+  #
+resumeData:
+
