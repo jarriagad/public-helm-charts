@@ -133,5 +133,5 @@ sidecarContainers: []
   #     - -f
   #     - /dev/null
   #
-resumeData:
+resumeData: {}
 
