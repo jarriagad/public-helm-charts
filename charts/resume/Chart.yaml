@@ -2,8 +2,8 @@ apiVersion: v2
 name: resume
 description: Current Resume
 type: application
-version: 0.0.3
-appVersion: 0.1.1
+version: 0.0.4
+appVersion: 0.1.2
 keywords:
   - resume
 sources:
