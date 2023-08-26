@@ -231,6 +231,20 @@ entries:
     version: 2.1.1
   resume:
   - apiVersion: v2
+    appVersion: 0.1.1
+    created: "2023-08-26T03:06:18.948606557Z"
+    description: Current Resume
+    digest: e0efc99c8afa6ac52819f627f109a5b7721da629ef148f1c896bb4045e8e3ca7
+    keywords:
+    - resume
+    name: resume
+    sources:
+    - https://github.com/jarriagad/resume
+    type: application
+    urls:
+    - https://github.com/jarriagad/public-helm-charts/releases/download/resume-0.0.3/resume-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
     appVersion: 0.0.1
     created: "2023-04-01T16:37:25.858250947Z"
     description: Current Resume
@@ -274,4 +288,4 @@ entries:
     urls:
     - https://github.com/jarriagad/public-helm-charts/releases/download/wireguard-client-0.0.1/wireguard-client-0.0.1.tgz
     version: 0.0.1
-generated: "2023-08-25T21:59:09.375179818Z"
+generated: "2023-08-26T03:06:18.948634857Z"
